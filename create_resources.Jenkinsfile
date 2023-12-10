@@ -31,11 +31,13 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 script {
+                    echo 'Running Terraform Plan...'
                     sh "terraform plan \
                         -var 'region=${TF_region}' \
                         -var 's3_bucket=${TF_bucket}' \
                         -var 'key_name=${TF_VAR_key_name}' \
                         -var 'instance_type=${TF_VAR_instance_type}'"
+                    echo 'Terraform Plan completed.'
                 }
             }
         }

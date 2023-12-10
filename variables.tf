@@ -1,6 +1,6 @@
 variable "ami" {
   description = "EC2 instance AMI ID"
-  default     = "ami-05c0f5389589545b7"
+  default     = "ami-0287a05f0ef0e9d9a"
 }
 
 variable "instance_type" {
@@ -14,14 +14,9 @@ variable "availability_zone" {
   default     = "ap-south-1a"
 }
 
-variable "iam_instance_profile" {
-  description = "EC2 instance IAM instance profile name"
-  default     = "pavan"
-}
-
 variable "key_name" {
   description = "EC2 instance key pair name"
-  default     = "demo-key"
+  default     = "jpass"
 }
 
 variable "security_groups" {
@@ -32,13 +27,13 @@ variable "security_groups" {
 
 variable "subnet_id" {
   description = "The subnet ID for the EC2 instance"
-  default     = "subnet-0e41453c9b1028803"  # Update with a valid subnet ID
+  default     = "subnet-0e1e12286b0be59b8"  
 }
 
 variable "tags" {
   type    = map(string)
   default = {
-    Name        = "TF-Instance"
+    Name        = "TF-JENKINS"
     Environment = "Dev"
   }
 }
@@ -50,5 +45,5 @@ variable "region" {
 
 variable "s3_bucket" {
   type    = string
-  default = "pavanssonixbucket1"
+  default = "prasanthkumar.000"
 }
